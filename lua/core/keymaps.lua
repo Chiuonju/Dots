@@ -77,7 +77,7 @@ vim.keymap.set('n', '<C-l>', ':wincmd l<CR>', opts)
 -- Select all
 vim.keymap.set('n', '<C-a>', 'ggVG', opts)
 -- Copy to system clipboard
-vim.keymap.set('v', '<C-c>', ':y+<CR>', opts)
+vim.keymap.set('v', '<C-y>', '"+y', { noremap = true, silent = true })
 -- Paste
 vim.keymap.set('n', '<leader>cc', '"+p', opts)
 -- Save
@@ -87,3 +87,11 @@ vim.keymap.set('n', '<C-s>', ':w<CR>', opts)
 vim.keymap.set('n', '<Leader>ii', function()
     vim.cmd 'DiagnosticsToggleVirtualText'
 end, { noremap = true, silent = true, desc = 'Toggle inline diagnostics' })
+
+vim.keymap.set('n', '<leader>re', function()
+    require('utils.resize').window_layouts.RESIZE()
+end, { desc = 'Resize window layout 1' })
+
+vim.keymap.set('n', '<leader>ll', function()
+    require('utils.resize').window_layouts.SetupCustomLayoutForCPP()
+end, { desc = 'Setup CPP window layout' })

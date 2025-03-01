@@ -28,7 +28,6 @@ require('lazy').setup {
     require 'plugins.whichkey',
     require 'plugins.autopairs',
     require 'plugins.italicize',
-    require 'plugins.toggleterm',
     require 'plugins.luasnip',
-
+    require 'plugins.toggleterm',
 }
