@@ -30,4 +30,5 @@ require('lazy').setup {
     require 'plugins.italicize',
     require 'plugins.luasnip',
     require 'plugins.toggleterm',
+    require 'plugins.todo-comments',
 }

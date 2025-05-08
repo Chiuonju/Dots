@@ -41,5 +41,16 @@ return {
 
         dashboard.opts.noautocmd = true -- Corrected: Access opts via dashboard.opts
         alpha.setup(dashboard.opts) -- Pass the dashboard.opts table to alpha.setup
+        vim.api.nvim_create_autocmd('User', {
+            pattern = 'AlphaReady',
+            callback = function()
+                pcall(function()
+                    require('lazy').load { plugins = { 'todo-comments.nvim' } }
+                end)
+                vim.schedule(function()
+                    vim.cmd 'TodoQuickFix'
+                end)
+            end,
+        })
     end,
 }
